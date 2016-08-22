@@ -35,15 +35,15 @@ function checkForWin () {
   //   lib.displayMessage('You win!')
   for (var i = 0; i < board.cells.length; i++) {
 
-    if (board.cells[i].isMine && !board.cells[i].isMarked) {
+    if (!board.cells[i].isMarked && board.cells[i].hidden) {
       return
     }
 
     if (!board.cells[i].isMine && board.cells[i].hidden) {
       return
   }
-  return lib.displayMessage('You win!')
 }
+return lib.displayMessage('You win!')
 }
 
 
